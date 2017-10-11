@@ -14,7 +14,7 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
-  require 'capybara'
+  require 'selenium/webdriver'
   require 'capybara/rspec'
   require 'rspec'
   # rspec-expectations config goes here. You can use an alternate
@@ -101,7 +101,6 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 
-Capybara.current_driver = :selenium
-Capybara.run_server = false
+Capybara.current_driver = :selenium_chrome_headless
 Capybara.app_host   = 'http://www.bbc.co.uk/'
 end
